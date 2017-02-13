@@ -10,6 +10,7 @@
     
     <StackPanel x:Name="LayoutRoot" DataContext="{StaticResource MVM}" MinHeight="300" MinWidth="300" >
         <UC:PointNavigationView />
+        <UC:World3D/>
         <TextBlock Text="Id" />
         <TextBox Text="{Binding ModelCameraPosition.Id}" />
 
