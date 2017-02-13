@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Media3D;
+using Maze;
 using PointManager.ViewModels;
 using Camera = PointManager.Models.Camera;
 
