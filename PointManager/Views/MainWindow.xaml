@@ -8,31 +8,32 @@
         <viewmodels:MainViewModel x:Key="MVM" />
     </Window.Resources>
     
-    <StackPanel x:Name="LayoutRoot" DataContext="{StaticResource MVM}" MinHeight="300" MinWidth="300" >
-        <UC:PointNavigationView />
-        <UC:World3D/>
-        <TextBlock Text="Id" />
-        <TextBox Text="{Binding ModelCameraPosition.Id}" />
+    <DockPanel LastChildFill="True" x:Name="LayoutRoot" DataContext="{StaticResource MVM}" MinHeight="300" MinWidth="300" >
+        <UC:PointNavigationView  DockPanel.Dock="Top"  />
+        <UC:World3D></UC:World3D>
+        <StackPanel DockPanel.Dock="Bottom">
+            <TextBlock Text="Id" />
+            <TextBox Text="{Binding ModelCameraPosition.Id}" />
 
-        <TextBlock Text="PositionName" />
-        <TextBox Text="{Binding ModelCameraPosition.PositionName}" />
+            <TextBlock Text="PositionName" />
+            <TextBox Text="{Binding ModelCameraPosition.PositionName}" />
 
-        <TextBlock Text="cameraX" />
-        <TextBox Text="{Binding ModelCameraPosition.cameraX}" />
+            <TextBlock Text="cameraX" />
+            <TextBox Text="{Binding ModelCameraPosition.cameraX}" />
 
-        <TextBlock Text="cameraY" />
-        <TextBox Text="{Binding ModelCameraPosition.cameraY}" />
+            <TextBlock Text="cameraY" />
+            <TextBox Text="{Binding ModelCameraPosition.cameraY}" />
 
-        <TextBlock Text="cameraZ" />
-        <TextBox Text="{Binding ModelCameraPosition.cameraZ}" />
+            <TextBlock Text="cameraZ" />
+            <TextBox Text="{Binding ModelCameraPosition.cameraZ}" />
 
-        <TextBlock Text="cameraDegH" />
-        <TextBox Text="{Binding ModelCameraPosition.cameraDegH}" />
+            <TextBlock Text="cameraDegH" />
+            <TextBox Text="{Binding ModelCameraPosition.cameraDegH}" />
 
-        <TextBlock Text="cameraDegV" />
-        <TextBox Text="{Binding ModelCameraPosition.cameraDegV}" />
+            <TextBlock Text="cameraDegV" />
+            <TextBox Text="{Binding ModelCameraPosition.cameraDegV}" />
 
-        <Button Content="Save"  Command="{Binding SCPC}" />
-        
-    </StackPanel>
+            <Button Content="Save" Command="{Binding SCPC}" />
+            </StackPanel>
+    </DockPanel>
 </Window>
