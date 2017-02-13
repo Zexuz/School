@@ -15,9 +15,18 @@ namespace PointManager.Views
     /// </summary>
     public partial class World3D : UserControl
     {
-        public World3D() { InitializeComponent(); }
+        public World3D()
+        {
+            InitializeComponent();
+        }
 
-        enum MoveMent { Neg = -1, None = 0, Pos = 1 }
+        enum MoveMent
+        {
+            Neg = -1,
+            None = 0,
+            Pos = 1
+        }
+
         PerspectiveCamera newpcam = new PerspectiveCamera();
         System.Windows.Threading.DispatcherTimer timer;
         MoveMent Walk, Strafe;
@@ -37,12 +46,24 @@ namespace PointManager.Views
         {
             switch (e.Key)
             {
-                case Key.Up: Walk = MoveMent.Pos;  break;
-                case Key.Down: Walk = MoveMent.Neg;  break;
-                case Key.Left: Strafe = MoveMent.Neg; break;
-                case Key.Right: Strafe = MoveMent.Pos;  break;
-                case Key.Z: CamPos.Y += 0.1; break;
-                case Key.X: CamPos.Y -= 0.1; break;
+                case Key.Up:
+                    Walk = MoveMent.Pos;
+                    break;
+                case Key.Down:
+                    Walk = MoveMent.Neg;
+                    break;
+                case Key.Left:
+                    Strafe = MoveMent.Neg;
+                    break;
+                case Key.Right:
+                    Strafe = MoveMent.Pos;
+                    break;
+                case Key.Z:
+                    CamPos.Y += 0.1;
+                    break;
+                case Key.X:
+                    CamPos.Y -= 0.1;
+                    break;
             }
         }
 
@@ -50,17 +71,25 @@ namespace PointManager.Views
         {
             switch (e.Key)
             {
-                case Key.Up: Walk = MoveMent.None;  break;
-                case Key.Down: Walk = Walk = MoveMent.None;  break;
-                case Key.Left: Strafe = MoveMent.None; break;
-                case Key.Right: Strafe = MoveMent.None; break;
+                case Key.Up:
+                    Walk = MoveMent.None;
+                    break;
+                case Key.Down:
+                    Walk = Walk = MoveMent.None;
+                    break;
+                case Key.Left:
+                    Strafe = MoveMent.None;
+                    break;
+                case Key.Right:
+                    Strafe = MoveMent.None;
+                    break;
             }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (Walk != MoveMent.None) CamPos.Move((double)Walk * Steps * 0.1);
-            if (Strafe != MoveMent.None) CamPos.Strafe((double)Strafe * Steps * 0.1);
+            if (Walk != MoveMent.None) CamPos.Move((double) Walk * Steps * 0.1);
+            if (Strafe != MoveMent.None) CamPos.Strafe((double) Strafe * Steps * 0.1);
             newpcam.Position = CamPos.Position;
             newpcam.LookDirection = new Vector3D(CamPos.Look.X, CamPos.Look.Y, CamPos.Look.Z);
             PrtCamData();
@@ -69,7 +98,7 @@ namespace PointManager.Views
         private void Window1_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             Viewport3D1.Camera = newpcam;
-            CamPos = new Camera() { X = 1, Y = 0.5, Z = 0 }; //CamPos.degH = CamPos.degV =0;
+            CamPos = new Camera() {X = 1, Y = 0.5, Z = 0}; //CamPos.degH = CamPos.degV =0;
             newpcam.Position = CamPos.Position;
             newpcam.LookDirection = new Vector3D(CamPos.Look.X, CamPos.Look.Y, CamPos.Look.Z);
             (new MazeGenerator()).MakeMaze(m3Dg);
@@ -98,6 +127,9 @@ namespace PointManager.Views
             CamPos.degH = 720 - 720 * proc2;
         }
 
-        private void Window1_MouseMove(object sender, MouseEventArgs e) { SetCameraAngles(e.GetPosition(null)); }
+        private void Window1_MouseMove(object sender, MouseEventArgs e)
+        {
+            SetCameraAngles(e.GetPosition(null));
+        }
     }
 }
