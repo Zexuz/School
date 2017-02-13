@@ -57,6 +57,9 @@
     <Compile Include="Views\PointNavigationView.xaml.cs">
       <DependentUpon>PointNavigationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\World3D.xaml.cs">
+      <DependentUpon>World3D.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +81,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\PointNavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\World3D.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
