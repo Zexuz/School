@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Interfaces\IWorld3DViewModel.cs" />
+    <Compile Include="Models\Camera.cs" />
     <Compile Include="ViewModels\PointNavigationViewModel.cs" />
     <Compile Include="ViewModels\World3DViewModel.cs" />
     <Compile Include="Views\PointNavigationView.xaml.cs">
