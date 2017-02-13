@@ -108,6 +108,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Images\Base.jpg" />
+    <EmbeddedResource Include="Images\Inner.jpg" />
+    <EmbeddedResource Include="Images\Outer.jpg" />
+    <EmbeddedResource Include="Images\Top.jpg" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
